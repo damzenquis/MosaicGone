@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lint warnings MosaicGone keeps on purpose, where the reason cannot sit next to the code itself. -->
+<lint>
+    <!-- Only ARM code is built (abiFilters in build.gradle.kts): every phone the app targets is ARM, and adding x86_64
+         for Intel / AMD Chromebooks and emulators would make the APK much larger. -->
+    <issue id="ChromeOsAbiSupport">
+        <ignore path="build.gradle.kts" />
+    </issue>
+    <!-- The -v26 suffix of this folder is unneeded with minSdk 29, but harmless; renaming it changes nothing users see. -->
+    <issue id="ObsoleteSdkInt">
+        <ignore path="src/main/res/mipmap-anydpi-v26" />
+    </issue>
+</lint>

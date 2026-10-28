@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        app:logo="@drawable/logo"
+        app:title="@string/app_name"
+        app:titleMarginStart="12dp">
+
+        <!-- shows the theme in use; tap to switch (kept when the app is closed) -->
+        <TextView
+            android:id="@+id/themeBtn"
+            style="@style/Chip"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:minWidth="64dp"
+            android:paddingVertical="6dp"
+            android:gravity="center"
+            android:text="@string/theme_light"
+            android:textSize="14sp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- the slogan and welcome lines are gone (MosaicGone v0.1); the controls below are ~12% larger to fill the screen -->
+            <TextView style="@style/Label" android:layout_marginTop="10dp" android:layout_marginBottom="6dp" android:textSize="13sp" android:text="@string/step1" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/line"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="76dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/mediaThumb"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/thumb_bg"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/mediaText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pick_media"
+                        android:textColor="@color/placeholder"
+                        android:textSize="17sp" />
+
+                    <!-- lint (HardcodedText): "…" is a symbol, not words; there is nothing to translate -->
+                    <TextView style="@style/Chip" android:text="…" tools:ignore="HardcodedText" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView style="@style/Label" android:layout_marginTop="16dp" android:layout_marginBottom="6dp" android:textSize="13sp" android:text="@string/step2" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/line"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="76dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/modelText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pick_model"
+                        android:textColor="@color/placeholder"
+                        android:textSize="17sp" />
+
+                    <TextView style="@style/Chip" android:text="…" tools:ignore="HardcodedText" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- lint (DisableBaselineAlignment): left as is, so the Mode and FPS boxes stay lined up exactly as they look now -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal"
+                tools:ignore="DisableBaselineAlignment">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/modeLayout"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1.4"
+                    android:hint="@string/mode">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:text="Auto"
+                        tools:ignore="HardcodedText" />
+                    <!-- lint (HardcodedText): "Auto" must match MainActivity.MODES (it is a value, saved in the options) -->
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fpsLayout"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/fps">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:text="0"
+                        tools:ignore="HardcodedText" />
+                    <!-- lint (HardcodedText): "0" is the FPS number (0 = original), read back as a number -->
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/autoBtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-light"
+                android:maxLines="1"
+                android:text="@string/auto_select"
+                android:textColor="@color/ink"
+                android:textSize="27sp"
+                app:backgroundTint="@color/button_bg"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/line" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/moreCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/more_options"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/morePanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/surface"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- a suggestion only: it changes no setting -->
+            <TextView
+                android:id="@+id/sharpTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/sharp_tip"
+                android:textColor="@color/muted"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/runBtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/run"
+                android:textColor="@color/ink"
+                android:textSize="31sp"
+                app:backgroundTint="@color/button_bg"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/line" />
+
+            <TextView
+                android:id="@+id/hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:minHeight="18dp"
+                android:textColor="@color/warn"
+                android:textSize="14sp" />
+
+            <!-- Support on its own, centred above the four -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/supportBtn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:maxLines="1"
+                android:text="@string/support"
+                android:textSize="16sp" />
+
+            <!-- four equal columns, so the row stays centred and fits narrow screens -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/helpBtn"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="4dp"
+                    android:text="@string/help"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/aboutBtn"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="4dp"
+                    android:text="@string/about"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/creditsBtn"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="4dp"
+                    android:text="@string/credits"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/licenseBtn"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="4dp"
+                    android:text="@string/license"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

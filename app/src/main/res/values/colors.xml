@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Light theme; values-night/colors.xml holds the same names for the dark theme. -->
+<resources>
+    <color name="window_bg">#ECECEC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="ink">#1D1D1D</color>
+    <color name="muted">#6B6B6B</color>
+    <color name="placeholder">#9A9A9A</color>
+    <color name="line">#C9C9C9</color>
+    <color name="accent">#2B6CB0</color>
+    <color name="on_accent">#FFFFFF</color>
+    <color name="warn">#B04A00</color>
+    <color name="ok">#2F7D32</color>
+    <color name="bars">#DCDCDC</color>
+    <!-- the "…" / theme chips, big buttons, the command and log boxes, the thumbnail before it loads -->
+    <color name="chip_bg">#F6F6F6</color>
+    <color name="button_bg">#F3F3F3</color>
+    <color name="code_bg">#F6F6F6</color>
+    <color name="code_ink">#444444</color>
+    <color name="thumb_bg">#BBBBBB</color>
+    <!-- behind pictures and videos: dark in both themes -->
+    <color name="preview_bg">#222222</color>
+    <!-- launcher icon background (the same in both themes) -->
+    <color name="icon_bg">#FFFFFF</color>
+</resources>

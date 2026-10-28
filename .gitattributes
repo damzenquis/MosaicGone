@@ -1,0 +1,10 @@
+# text files are stored with LF line endings
+* text=auto
+# the Gradle launcher scripts must keep their platform's line endings
+gradlew text eol=lf
+*.bat text eol=crlf
+# models, images and the wrapper jar are binary
+*.onnx binary
+*.pt binary
+*.png binary
+*.jar binary

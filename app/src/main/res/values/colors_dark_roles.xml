@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material roles used only by the dark theme (values-night/themes.xml): dialogs, menus, fields, check boxes, progress bar -->
+    <color name="dark_surface_lowest">#0E1013</color>
+    <color name="dark_surface_low">#171A1E</color>
+    <color name="dark_surface_mid">#1E2126</color>
+    <color name="dark_surface_high">#24282D</color>
+    <color name="dark_surface_highest">#2C3036</color>
+    <color name="dark_surface_bright">#33373D</color>
+    <color name="dark_surface_variant">#2A2E34</color>
+    <color name="dark_outline">#5A6069</color>
+    <color name="dark_accent_container">#1F3A5F</color>
+    <color name="dark_on_accent_container">#D6E3FF</color>
+    <color name="dark_error">#F2B8B5</color>
+    <color name="dark_on_error">#601410</color>
+</resources>

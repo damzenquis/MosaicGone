@@ -1,0 +1,25 @@
+# build output and IDE / tool caches
+.gradle/
+.kotlin/
+.idea/
+build/
+local.properties
+*.apk
+
+# test fixtures: only the synthetic "shapes" clip is in Git; other clips in core/testdata/gt are optional
+# (core/testdata/README.md)
+core/testdata/gt/*
+!core/testdata/gt/shapes/
+
+# model development: upstream weights, datasets, training output and the Python environment (model-development/README.md)
+model-development/training/models/
+model-development/training/data/
+model-development/training/runs/
+model-development/training/.venv/
+__pycache__/
+
+# signing key and its passwords: never published
+keystore/
+keystore.properties
+*.jks
+*.keystore

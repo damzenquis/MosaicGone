@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark theme: same names as values/colors.xml. -->
+<resources>
+    <color name="window_bg">#121417</color>
+    <color name="surface">#1B1E22</color>
+    <color name="ink">#E8EAED</color>
+    <color name="muted">#A3A8B0</color>
+    <color name="placeholder">#80868E</color>
+    <color name="line">#3C4148</color>
+    <color name="accent">#8AB4F8</color>
+    <color name="on_accent">#0B1D36</color>
+    <color name="warn">#FFB074</color>
+    <color name="ok">#81C995</color>
+    <color name="bars">#121417</color>
+    <color name="chip_bg">#262A30</color>
+    <color name="button_bg">#22262B</color>
+    <color name="code_bg">#16191C</color>
+    <color name="code_ink">#C9CDD2</color>
+    <color name="thumb_bg">#3C4148</color>
+    <color name="preview_bg">#0B0C0E</color>
+</resources>

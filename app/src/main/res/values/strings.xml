@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MosaicGone</string>
+    <string name="step1">Step 1 · Image or video</string>
+    <string name="step2">Step 2 · Pretrained model</string>
+    <string name="pick_media">Tap to choose an image or video</string>
+    <string name="pick_model">Tap to choose a model</string>
+    <string name="reading_file">Reading the file…</string>
+    <string name="cannot_read_file">Could not read this file: %1$s</string>
+    <string name="mode">Mode</string>
+    <string name="fps">FPS (0 = original)</string>
+    <string name="more_options">More Options</string>
+    <string name="run">Run!</string>
+    <string name="sharp_tip">For a grainier, sharper and more \"realistic\" quality using our BasicVSR++ model, open More Options and tick \"Sharpen the cleaned area only\" and choose one of the Real-ESRGAN sharpeners with denoise at 0.</string>
+    <string name="auto_select">Auto-Select Options</string>
+    <string name="support">Support</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="credits">Credits</string>
+    <string name="license">License</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="cancel">Cancel</string>
+    <string name="share">Share</string>
+    <string name="open">Open</string>
+    <string name="again">Process another</string>
+    <string name="detected_cpu">Detected: %1$s</string>
+    <string name="default_mask_threshold" translatable="false">128</string>
+    <string name="reading_phone_and_file">Reading the phone and the file…</string>
+    <string name="cancelling">Cancelling…</string>
+    <string name="progress_count">%1$s/%2$s</string>
+    <string name="finished_in">Finished! (%1$s)</string>
+    <string name="status_error">Error</string>
+    <string name="status_cancelled">Cancelled</string>
+    <string name="log_hint">Log with timing breakdown, saved to Download/MosaicGone. Tap to open, long-press to share.</string>
+    <!-- lint (TypographyDashes): the double hyphens start command-line options here; an em dash would make them wrong -->
+    <string name="extra_options_hint" tools:ignore="TypographyDashes">More options, e.g. --medfilt_num 7 --no_feather</string>
+</resources>
